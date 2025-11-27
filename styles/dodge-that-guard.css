@@ -1,73 +1,63 @@
-/* Container und Hintergrund */
-.dtg-window {
+/* Der Button im Charakterbogen */
+.dtg-trigger {
+    flex: 0 0 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dtg-trigger:hover {
+    color: #00e5ff;
+    text-shadow: 0 0 5px #00e5ff;
+}
+
+/* Das Fenster */
+.dtg-app {
     background-color: #1a1a1a;
     color: #eee;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    font-family: "Signika", sans-serif;
 }
 
 .dtg-header {
-    background: #0f0f0f;
-    border-bottom: 2px solid #4a4a4a;
-    padding: 8px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 5px 10px;
+    background: #000;
+    border-bottom: 2px solid #333;
+    font-family: monospace;
     font-size: 14px;
 }
 
-.dtg-stat {
-    margin-right: 10px;
-}
-.dtg-stat.good { color: #55ff55; }
-.dtg-stat.bad { color: #ff5555; }
-.dtg-stat.warn { color: #ffcc00; }
-
-/* Spielfeld */
 .dtg-canvas {
     position: relative;
-    flex: 1;
-    background: radial-gradient(circle at center, #2a2a2a 0%, #000 100%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at bottom, #2a2a2a 0%, #000 80%);
     overflow: hidden;
     cursor: none; /* Maus verstecken für Immersion */
-    border: 1px solid #333;
 }
 
-/* Der Spieler (Dieb) */
+/* Spieler */
 .dtg-player {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #00aaff;
+    bottom: 10px;
+    width: 24px;
+    height: 24px;
+    background: #00e5ff;
     border-radius: 50%;
-    box-shadow: 0 0 8px #00aaff;
-    bottom: 5%;
+    box-shadow: 0 0 10px #00e5ff;
     transform: translateX(-50%);
     z-index: 10;
 }
 
-/* Die Wachen/Hindernisse (Lichtkegel) */
+/* Wachen / Hindernisse */
 .dtg-guard {
     position: absolute;
     width: 30px;
     height: 30px;
-    background: rgba(255, 200, 0, 0.8);
+    background: rgba(255, 60, 60, 0.9);
     border-radius: 50%;
-    box-shadow: 0 0 15px 5px rgba(255, 100, 0, 0.6);
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.4);
     z-index: 5;
-}
-
-/* Button im Charakterbogen */
-.dtg-sheet-btn {
-    flex: 0 0 20px;
-    margin-right: 6px;
-    color: #888;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-.dtg-sheet-btn:hover {
-    color: #00aaff;
-    text-shadow: 0 0 5px #00aaff;
 }
